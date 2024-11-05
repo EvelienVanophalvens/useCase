@@ -12,7 +12,7 @@ class Blog extends StatefulWidget {
 
 class _BlogState extends State<Blog> {
   final blogViewModel = BlogViewModel();
-  Userrepository userRepository = Userrepository();
+  UserRepository userRepository = UserRepository();
   late  final userViewModel = UserViewModel(userRepository);
 
   @override

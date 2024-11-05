@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class Userrepository {
+class UserRepository {
   final String baseUrl = "http://10.0.2.2:3001/v1";
 
   Future<Map<String,dynamic>> login(String username, String password) async {

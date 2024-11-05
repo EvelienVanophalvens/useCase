@@ -14,7 +14,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
-  Userrepository userRepository = Userrepository();
+  UserRepository userRepository = UserRepository();
   late  final loginViewModel = UserViewModel(userRepository);
   final UserModel userModel = UserModel(username: '', password: '');
 

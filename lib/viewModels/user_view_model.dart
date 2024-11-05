@@ -9,7 +9,7 @@ class LogoutSucces extends LogoutState {}
 class LogoutFailed extends LogoutState {}
 
 class UserViewModel {
-  final Userrepository userRepository;
+  final UserRepository userRepository;
 
   UserViewModel(this.userRepository);
 
