@@ -1,9 +1,11 @@
 import 'package:demo/bloc/blog_bloc.dart';
 import 'package:demo/bloc/blog_state.dart';
 import 'package:demo/bloc/blog_event.dart';
+import 'package:demo/bloc/user_bloc.dart';
 import 'package:demo/repositories/blog_repository.dart';
 import 'package:demo/viewModels/user_view_model.dart';
 import 'package:demo/repositories/user_repository.dart';
+import 'package:demo/widgets/logout_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,20 +24,12 @@ class _BlogState extends State<Blog> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        actions: [
-          IconButton(
-            onPressed: () async{
-              final state = await userViewModel.logout();
-              switch(state){
-                case LogoutSucces():
-                Navigator.of(context).pop();
-                case LogoutFailed():
-              }
-            }, 
-            icon: const Icon(Icons.logout))
-        ],
+      appBar: PreferredSize(
+          preferredSize:  const Size.fromHeight(56),
+          child: BlocProvider(
+            create: (BuildContext context) => UserBloc(userRepository: userRepository),
+            child: const LogoutButton()
+          ),
       ),
       body: RepositoryProvider(
         create: (context) => BlogRepository(),
