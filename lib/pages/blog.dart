@@ -5,6 +5,7 @@ import 'package:demo/bloc/user_bloc.dart';
 import 'package:demo/repositories/blog_repository.dart';
 import 'package:demo/viewModels/user_view_model.dart';
 import 'package:demo/repositories/user_repository.dart';
+import 'package:demo/widgets/blog_list.dart';
 import 'package:demo/widgets/logout_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,32 +48,7 @@ class _BlogState extends State<Blog> {
                       return const Center(child: CircularProgressIndicator(),);
                     case PostsSucces():
                       final posts = state.posts;
-                      return 
-                        ListView.builder(
-                          itemCount: posts.length,
-                          itemBuilder: (context, index){
-                          final post = posts[index];
-                          return
-                            Container(
-                              margin: const EdgeInsets.symmetric(vertical: 10),
-                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade300.withOpacity(0.4),
-                                borderRadius: BorderRadius.circular(10)
-                              ),
-                              child: 
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(post.title, style: const TextStyle(fontWeight: FontWeight.bold),),
-                                      Text(post.description),  
-                                      const SizedBox(height: 10),
-                                      Image.network(post.imageUrl, width: double.infinity, height: 100,),
-                                    ],
-                                )
-                            );
-                          }
-                        );
+                      return BlogList(posts: posts);
                       case PostsError():
                         final errorMessage = state.errorMessage;
                         return Text(errorMessage);
