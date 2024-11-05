@@ -1,6 +1,6 @@
 import 'package:demo/bloc/blog_bloc.dart';
 import 'package:demo/bloc/blog_state.dart';
-import 'package:demo/bloc/get_posts.dart';
+import 'package:demo/bloc/blog_event.dart';
 import 'package:demo/repositories/blog_repository.dart';
 import 'package:demo/viewModels/user_view_model.dart';
 import 'package:demo/repositories/user_repository.dart';

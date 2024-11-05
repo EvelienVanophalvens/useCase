@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'blog_state.dart';
-import 'get_posts.dart';
+import 'blog_event.dart';
 import 'package:demo/repositories/blog_repository.dart';
 
 class BlogBloc extends Bloc<BlogEvent, BlogState>{
