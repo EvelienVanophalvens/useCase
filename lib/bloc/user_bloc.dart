@@ -20,7 +20,7 @@ class UserBloc extends Bloc<UserEvent, UserState>{
         emit(LoginFailed("Password or Username is incorrect"));
       }
     }catch(e){
-      emit(LoginFailed("Something went wrong"));
+      emit(LoginFailed2("Something went wrong"));
     }
   }
 

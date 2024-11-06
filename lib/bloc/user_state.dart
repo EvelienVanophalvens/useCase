@@ -1,4 +1,9 @@
-abstract class UserState {}
+import 'package:equatable/equatable.dart';
+
+abstract class UserState extends Equatable {
+    @override
+  List<Object?> get props => [];
+}
 
 class UserInitial extends UserState{}
 
@@ -8,6 +13,11 @@ class LoginFailed extends UserState{
   final String errorMessage;
   
   LoginFailed(this.errorMessage);
+}
+class LoginFailed2 extends UserState{
+  final String errorMessage;
+  
+  LoginFailed2(this.errorMessage);
 }
 
 class LogoutLoading extends UserState{}

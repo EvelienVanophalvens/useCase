@@ -3,7 +3,6 @@ import 'package:demo/bloc/blog_state.dart';
 import 'package:demo/bloc/blog_event.dart';
 import 'package:demo/bloc/user_bloc.dart';
 import 'package:demo/repositories/blog_repository.dart';
-import 'package:demo/viewModels/user_view_model.dart';
 import 'package:demo/repositories/user_repository.dart';
 import 'package:demo/widgets/blog_list.dart';
 import 'package:demo/widgets/logout_button.dart';
@@ -19,7 +18,6 @@ class Blog extends StatefulWidget {
 
 class _BlogState extends State<Blog> {
   UserRepository userRepository = UserRepository();
-  late  final userViewModel = UserViewModel(userRepository);
 
 
   @override
