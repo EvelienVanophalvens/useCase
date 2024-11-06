@@ -13,11 +13,9 @@ class BlogRepository {
 
      if (response.statusCode == 200) {
       final List<dynamic> jsonData = jsonDecode(response.body);
-      return jsonData.map<BlogModel>((post) => BlogModel(
-        title: post['title'],
-        description: post['description'],
-        imageUrl: post['image_url'],
-      )).toList();
+       return jsonData
+          .map<BlogModel>((post) => BlogModel.fromJson(post))
+          .toList();
   } else {
     throw Exception('Failed to load posts');
   }
