@@ -9,6 +9,8 @@ import 'package:demo/widgets/logout_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../injection.dart';
+
 class Blog extends StatefulWidget {
   const Blog({super.key});
 
@@ -31,7 +33,7 @@ class _BlogState extends State<Blog> {
           ),
       ),
       body: RepositoryProvider(
-        create: (context) => BlogRepository(),
+        create: (context) => getIt<BlogRepository>() ,
           child: BlocProvider(
           create: (BuildContext context) => BlogBloc(
             blogRepository: context.read<BlogRepository>(),

@@ -1,7 +1,9 @@
+import 'package:demo/injection.dart';
 import 'package:flutter/material.dart';
 import 'pages/login.dart';
 
 void main() {
+  configureInjection();
   runApp(const MainApp());
 }
 
